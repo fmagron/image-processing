@@ -87,6 +87,14 @@ namespace ImageProcessing {
                     pictureBox2.ImageLocation = currentFile.outputFile;
                 }
             }
+            else
+            {
+                var error = e.UserState as ImageProcess.ErrorMessage;
+                if (error != null)
+                {
+                    MessageBox.Show(error.message + "\n" + error.stackTrace);
+                }
+            }
         }        
 
         private void MainForm_Load(object sender, EventArgs e)
